@@ -3,7 +3,7 @@ import dotenv  from 'dotenv';
 const app =  express();
 // import AuthRoute  from './src/router/Auth.router';
 // import AnalyseRoute  from './src/router/analyse.route';
-import './src/db/database';
+// import '../src/db/database';
 
 
 app.use(express.json());
