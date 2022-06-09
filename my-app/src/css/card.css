@@ -16,9 +16,15 @@
     padding: 100px;
     flex-direction: column;
     align-items: center;
+    cursor: pointer;
+}
+
+.card_container:hover{
+    background-color: #1E77C7;
 }
 
 img, svg {
     vertical-align: middle;
     margin-bottom: 10px;
+    cursor: pointer;
 }

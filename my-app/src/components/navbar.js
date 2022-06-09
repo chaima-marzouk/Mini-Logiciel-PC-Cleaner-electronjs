@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Navbar from 'react-bootstrap/Navbar'
 import {
     Container,
@@ -6,8 +6,27 @@ import {
     Button
 } from "react-bootstrap";
 import '../css/navbar.css';
+import axios from 'axios'
+
+
 
 function navbar() {
+
+    
+            const URL = 'http://localhost:5000/delete/delete';
+            const Clean = () => {
+              try {
+                axios.get(`${URL}`).then((res) => {
+                  if (res) {
+                    console.log(res);
+                  }
+                });
+              } catch (error) {
+                console.log(error.message);
+              }
+            };
+    
+
   return (
     <div>
         <Navbar  variant="dark">
@@ -38,7 +57,9 @@ function navbar() {
                     </ul>
                 </div>
                 <div className='nav_button_analyse_part'>
-                    <Button className=' mb-2' variant="outline-light" size="lg" >Anaylser</Button>
+                    <Button className=' mb-2' variant="outline-light" size="lg" 
+                     onClick={() => Clean()}
+                    >Anaylser</Button>
                 </div>
               </div>
             </Container>

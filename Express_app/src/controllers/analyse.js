@@ -1,9 +1,10 @@
 import fs from'fs';
 import path from 'path';
 import getFolderSize from 'get-folder-size'
+import { Module } from 'module';
 
 
-const  getFileSizee =  async ()=>{
+exports.getFileSizee =  async () => {
 
     const myFolder = "C:/Users/Youcode/Desktop/test";
     const size = await getFolderSize.loose(myFolder);
@@ -20,7 +21,7 @@ const  getFileSizee =  async ()=>{
 
 getFileSizee()
 
-const nettoyer = () => {
+exports.nettoyer = () => {
     const myFolder = 'C:/Users/Youcode/Desktop/test/*';
    fs.unlink(myFolder, function (err) {
     if (err) throw err;
@@ -30,4 +31,3 @@ const nettoyer = () => {
 
 nettoyer()
 
-// 
